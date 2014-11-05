@@ -170,5 +170,29 @@
 		echo "<p>\$y returns: $y</p>";
 		?>
 	</div>
+	
+	<div style="float: left; width: 100%;">
+		<h3>Heredoc Syntax</h3>
+		<?php
+		echo <<<EOD
+Example of string
+spanning multiple lines
+using heredoc syntax.
+EOD;
+		echo "<br />";
+		$name = "John";
+		echo <<<EOD
+My name is $name.
+That was a variable.
+EOD;
+		?>
+		<br /><br />
+		<code>$id = 10;</code><br />
+		<code>$sql = &lt;&lt;&lt;SQL</code><br />
+		<code>SELECT * FROM table WHERE id = $id;</code><br />
+		<code>SQL;</code><br />
+		<code>mysql_query($sql);</code><br />
+		<p class="note">Useful for SQL, no need to escape quotes or double quotes.</p>
+	</div> 
 </body>
 </html>
