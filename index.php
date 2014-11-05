@@ -2,9 +2,9 @@
 <head>
 	<style>
 		body {
-			background: #333 url("http://tympanus.net/Tutorials/HeadingSets/images/black_denim.jpg");
+			background: #333 url("http://i.imgur.com/tlSetfG.jpg");
 			font-family: Arial;
-			font-size: ;
+			font-size: 14px;
 			color: #fff;
 			padding: 20px;
 		}
@@ -66,7 +66,7 @@
 
 		h4 {
 			margin: 1em 0 .6em 0;
-			padding: 0 0 0 50px;
+			padding: 0 0 0 20px;
 			font-weight: normal;
 			color: white;
 			font-family: 'Hammersmith One', sans-serif;
@@ -97,6 +97,8 @@
 			color: #000;
 			width: auto;
 		}
+		
+		code {padding-left: 30px;}
 	</style>
 </head>
 <body>
@@ -135,6 +137,38 @@
 		<code>function newCar($name, $age, $type="sedan") { ... }</code><br />
 		<p class="note">Parameters with predefined values must be placed after ones without.</p>
 		<h4>Variable Length Argument List</h4>
+		<code>function addNames() { ... }</code><br /><br />
+		<code>addNames("Name1", "Name2", "AnotherName", "FinalName");</code><br />
+		<?php
+		function addNames()
+		{
+			$argCount = func_num_args();
+			echo "<p>func_num_args(): $argCount</p>";
+			echo "<p>func_get_args(): </p>";
+			var_dump(func_get_args());
+		}
+		addNames("Name1", "Name2", "AnotherName", "FinalName");
+		?>
+		<h4>Variable Functions</h4>
+		<code>function myFunc($a) { return $a; }</code><br />
+		<code>$indirect = "myFunc";</code><br />
+		<code>$y = $indirect("test");</code><br />
+		<?php
+		function myFunc($a) {
+			return $a;
+		}
+		$indirect = "myFunc";
+		$y = $indirect("test");
+		echo "<p>\$y returns: $y</p>";
+		?>
+		<h4>Anonymous Functions (Lambda Functions)</h4>
+		<code>$multiply = create_function('$a, $b', 'return $a*$b;');</code><br />
+		<code>$y = $multiply(4, 7);</code><br />
+		<?php
+		$multiply = create_function('$a, $b', 'return $a*$b;');
+		$y = $multiply(4, 7);
+		echo "<p>\$y returns: $y</p>";
+		?>
 	</div>
 </body>
 </html>
