@@ -22,11 +22,10 @@
 				inset 0 1px 1px rgba(0,0,0,0.5), 
 				0 1px 1px rgba(255,255,255,0.3);
 		}
-		h4:after {}
 
 		h2:after { background: #0AF; }
 		h3:after { background: #3BF; }
-		h4:after { background: #ff5050; }
+		h4:after { background: #f55; }
 
 		h1 {
 			font-size: 36px;
@@ -77,6 +76,27 @@
 			line-height: 20px;
 			font-family: 'Questrial', sans-serif;
 		}
+		
+		.note:before {
+			content: "NOTE:";
+			color: #000;
+			background: rgb(199, 237, 253);
+			border-radius: 4px 0px 0px 4px;
+			padding: 5px;
+			margin-left: -10px;
+			margin-right: 6px;
+			font-weight: bolder;
+			box-shadow: 
+				inset 0 1px 1px rgba(0,0,0,0.5), 
+				0 1px 1px rgba(255,255,255,0.3);
+		}
+		.note {
+			background: rgb(255, 232, 232);
+			border-radius: 0px 4px 4px 0px;
+			padding: 4px;
+			color: #000;
+			width: auto;
+		}
 	</style>
 </head>
 <body>
@@ -111,6 +131,10 @@
 	
 	<div style="float: left; width: 100%;">
 		<h3>Advanced Function Definitions</h3>
+		<h4>Default Parameter Values</h4>
+		<code>function newCar($name, $age, $type="sedan") { ... }</code><br />
+		<p class="note">Parameters with predefined values must be placed after ones without.</p>
+		<h4>Variable Length Argument List</h4>
 	</div>
 </body>
 </html>
