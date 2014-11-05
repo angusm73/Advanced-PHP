@@ -81,29 +81,35 @@
 <body>
 	<h1>Advanced PHP</h1>
 	
-	<h3>Multidimensional Arrays</h3>
-	<p>Key (Name, Score, Price)</p>
-	<div style='float: left;'>
-	<?php
-	$myArray = array(
-		array("GTX 670", 5380, 399),
-		array("GTX 680", 5715, 490),
-		array("GTX 770", 6172, 269),
-		array("GTX 780", 8040, 359),
-		array("GTX 970", 8839, 327),
-		array("GTX 980", 9767, 549)
-	);
-	for ($row = 0; $row < count($myArray); $row++) {
-		echo "Row number: $row<ul>";
-		for ($col = 0; $col < count($myArray[$row]); $col++) {
-			echo "<li>" . $myArray[$row][$col] . "</li>";	
+	<div style="float: left; width: 100%;">
+		<h3>Multidimensional Arrays</h3>
+		<p>Key (Name, Score, Price)</p>
+		<div style='float: left;'>
+		<?php
+		$myArray = array(
+			array("GTX 670", 5380, 399),
+			array("GTX 680", 5715, 490),
+			array("GTX 770", 6172, 269),
+			array("GTX 780", 8040, 359),
+			array("GTX 970", 8839, 327),
+			array("GTX 980", 9767, 549)
+		);
+		for ($row = 0; $row < count($myArray); $row++) {
+			echo "Row number: $row<ul>";
+			for ($col = 0; $col < count($myArray[$row]); $col++) {
+				echo "<li>" . $myArray[$row][$col] . "</li>";	
+			}
+			echo "</ul>";
 		}
-		echo "</ul>";
-	}
-	?>
+		?>
+		</div>
+		<div style='float: right;'>
+			<?=var_dump($myArray);?>
+		</div>
 	</div>
-	<div style='float: right;'>
-		<?=var_dump($myArray);?>
+	
+	<div style="float: left; width: 100%;">
+		<h3>Advanced Function Definitions</h3>
 	</div>
 </body>
 </html>
