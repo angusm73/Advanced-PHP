@@ -193,6 +193,48 @@ EOD;
 		<code>SQL;</code><br />
 		<code>mysql_query($sql);</code><br />
 		<p class="note">Useful for SQL, no need to escape quotes or double quotes.</p>
-	</div> 
+	</div>
+	
+	<div style="float: left; width: 100%;">
+		<h3>printf() and sprintf()</h3>
+		<h4>Type specifiers</h4>
+		<ul>
+			<li>d: Displays argument as a decimal number</li>
+			<li>b: Displays an integer as a binary number</li>
+			<li>c: Displays an integer as ASCII equivalent</li>
+			<li>f: Displays an integer as a floating-point number (double)</li>
+			<li>o: Displays an integer as and octal number (base 8)</li>
+			<li>s: Displays argument as a string</li>
+			<li>x: Displays an integer as a lowercase hexadecimal number</li>
+			<li>X: Displays an integer as an uppercase hexadecimal number</li>
+			<p>Example:</p>
+			<code>printf("%d", 482);</code><br /><br />
+			<?php
+			$i = 482;
+			printf("Decimal: %d<br />", $i);
+			printf("Binary: %b<br />", $i);
+			printf("ASCII: %c<br />", $i);
+			printf("Floating-point: %f<br />", $i);
+			printf("Octal: %o<br />", $i);
+			printf("String: %s<br />", $i);
+			printf("Lowercase hex: %x<br />", $i);
+			printf("Uppercase hex: %X<br />", $i);
+			?>
+		</ul>
+		<h4>Paddng specifier</h4>
+		<?php
+		$value = sprintf("%04d", 75);
+		$altValue = sprintf("%'x4d", 75);
+		echo "<code>printf(\"%04d\", 75)</code> prints: $value";
+		echo "<br />or<br />";
+		echo "<code>printf(\"%'x4d\", 75)</code> prints: $altValue";
+		?>
+		<h4>Precision Specifier</h4>
+		<?php
+		$precisionFloat = sprintf("%.4f", 5.33333333);
+		echo "<code>printf(\"%.4f\", 5.33333333)</code> prints: $precisionFloat";
+		?>
+		<p class="note">printf() echo's the formatted string, sprintf() returns the formatted string.</p>
+	</div>
 </body>
 </html>
