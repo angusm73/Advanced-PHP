@@ -64,7 +64,7 @@
 			font-family: 'Questrial', sans-serif;
 		}
 
-		h4 { 
+		h4 {
 			margin: 1em 0 .6em 0;
 			padding: 0 0 0 20px;
 			font-weight: normal;
@@ -79,10 +79,31 @@
 	</style>
 </head>
 <body>
+	<h1>Advanced PHP</h1>
+	
+	<h3>Multidimensional Arrays</h3>
+	<p>Key (Name, Score, Price)</p>
+	<div style='float: left;'>
 	<?php
-	echo "<h1>Advanced PHP</h1>";
-	echo "<h3>Multidimensional Arrays</h3>";
-	echo "<p>test</p>";
+	$myArray = array(
+		array("GTX 670", 5380, 399),
+		array("GTX 680", 5715, 490),
+		array("GTX 770", 6172, 269),
+		array("GTX 780", 8040, 359),
+		array("GTX 970", 8839, 327),
+		array("GTX 980", 9767, 549)
+	);
+	for ($row = 0; $row < count($myArray); $row++) {
+		echo "Row number: $row<ul>";
+		for ($col = 0; $col < count($myArray[$row]); $col++) {
+			echo "<li>" . $myArray[$row][$col] . "</li>";	
+		}
+		echo "</ul>";
+	}
 	?>
+	</div>
+	<div style='float: right;'>
+		<?=var_dump($myArray);?>
+	</div>
 </body>
 </html>
