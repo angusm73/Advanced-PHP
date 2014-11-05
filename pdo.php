@@ -88,5 +88,19 @@
 		}
 	}
 	?>
+	<h4>SELECT data</h4>
+	<p>There are different modes to fetch data, here they are:</p>
+	<ul>
+		<?php
+		$STH = $DBH->query('SELECT * FROM people');
+		?>
+		<li>PDO::FETCH_ASSOC</li><?php $STH = $DBH->query('SELECT * FROM people'); $STH->setFetchMode(PDO::FETCH_ASSOC); var_dump($STH->fetch()); ?>
+		<li>PDO::FETCH_NUM</li><?php $STH = $DBH->query('SELECT * FROM people'); $STH->setFetchMode(PDO::FETCH_NUM); var_dump($STH->fetch()); ?>
+		<li>PDO::FETCH_BOTH (default)</li><?php $STH = $DBH->query('SELECT * FROM people'); $STH->setFetchMode(PDO::FETCH_BOTH); var_dump($STH->fetch()); ?>
+		<li>PDO::FETCH_LAZY</li><?php $STH = $DBH->query('SELECT * FROM people'); $STH->setFetchMode(PDO::FETCH_LAZY); var_dump($STH->fetch()); ?>
+		<li>PDO::FETCH_OBJ</li><?php $STH = $DBH->query('SELECT * FROM people'); $STH->setFetchMode(PDO::FETCH_OBJ); var_dump($STH->fetch()); ?>
+		<li>PDO::FETCH_CLASS</li>
+		<li>PDO::FETCH_INTO</li>
+	</ul>
 </body>
 </html>
