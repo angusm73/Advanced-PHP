@@ -22,10 +22,11 @@
 				inset 0 1px 1px rgba(0,0,0,0.5), 
 				0 1px 1px rgba(255,255,255,0.3);
 		}
+		h4:after {}
 
 		h2:after { background: #0AF; }
 		h3:after { background: #3BF; }
-		h4:after { background: #6Cf; }
+		h4:after { background: #ff5050; }
 
 		h1 {
 			font-size: 36px;
@@ -66,7 +67,7 @@
 
 		h4 {
 			margin: 1em 0 .6em 0;
-			padding: 0 0 0 20px;
+			padding: 0 0 0 50px;
 			font-weight: normal;
 			color: white;
 			font-family: 'Hammersmith One', sans-serif;
@@ -83,7 +84,7 @@
 	
 	<div style="float: left; width: 100%;">
 		<h3>Multidimensional Arrays</h3>
-		<p>Key (Name, Score, Price)</p>
+		<h4>Key (Name, Score, Price)</h4>
 		<div style='float: left;'>
 		<?php
 		$myArray = array(
